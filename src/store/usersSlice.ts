@@ -76,9 +76,6 @@ const usersSlice = createSlice({
       .addCase(
         deleteUsersAsync.fulfilled,
         (state, action: PayloadAction<number[]>) => {
-          // state.users = state.users.filter((user) =>
-          //   user.id ? !action.payload.includes(user.id) : true
-          // );
           state.users = state.users.filter(
             (_, index) => !action.payload.includes(index)
           );

@@ -1,4 +1,3 @@
-// import * as React from "react";
 import {
   ColumnDef,
   ColumnFiltersState,
@@ -33,17 +32,10 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-// import { data } from "@/lib/data";
-
 import { DrawerDialogDemo } from "./DrawerDialog";
 import { Payment } from "@/lib/definitions";
 import { useState } from "react";
-// import { useContext} from "react";
-// import { UsersContext } from "@/context";
-// import { deleteUsersFromServer } from "@/lib/api";
 import { useEffect } from "react";
-// import { useSelector } from "react-redux";
-// import { RootState } from "@/store";
 import { fetchUsers, deleteUsersAsync } from "@/store/usersSlice";
 import { useAppDispatch, useAppSelector } from "@/hooks/typeshook";
 
@@ -111,7 +103,7 @@ export const columns: ColumnDef<Payment>[] = [
   },
   {
     accessorKey: "amount",
-    // header: () => <div className="text-right">Amount</div>,
+
     header: ({ column }) => {
       return (
         <div className="text-right">
@@ -126,10 +118,8 @@ export const columns: ColumnDef<Payment>[] = [
       );
     },
     cell: ({ row }) => {
-      // const amount = Number(row.getValue("amount")) | 0;
       const amount = Number(row.original.amount);
 
-      // Format the amount as a dollar amount
       const formatted = new Intl.NumberFormat("en-US", {
         style: "currency",
         currency: "USD",
@@ -173,22 +163,13 @@ export function DataTableDemo() {
   const [sorting, setSorting] = useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
   const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({});
-  // const [rowSelection, setRowSelection] = useState({});
   const [rowSelection, setRowSelection] = useState<{ [key: string]: boolean }>(
     {}
   );
 
-  // const {
-  //   users,
-  //   deleteUsers,
-  // }: { users: Payment[]; deleteUsers: (deletedUserIds: number[]) => void } =
-  //   useContext(UsersContext);
-
   const dispatch = useAppDispatch();
-  //const users = useSelector((state: RootState) => state.users.users);
-  const users = useAppSelector((state) => state.users.users);
 
-  console.log(users);
+  const users = useAppSelector((state) => state.users.users);
 
   useEffect(() => {
     dispatch(fetchUsers());
@@ -321,7 +302,7 @@ export function DataTableDemo() {
         </Table>
       </div>
       <div className="flex items-center justify-end space-x-2 py-4">
-        <div className="flex-1 text-sm text-muted-foreground">
+        <div className="flex-1 text-sm text-white">
           {table.getFilteredSelectedRowModel().rows.length} of{" "}
           {table.getFilteredRowModel().rows.length} row(s) selected.
         </div>
