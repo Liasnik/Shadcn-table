@@ -13,10 +13,8 @@ import {
   Drawer,
   DrawerClose,
   DrawerContent,
-  DrawerDescription,
+  // DrawerDescription,
   DrawerFooter,
-  DrawerHeader,
-  DrawerTitle,
   DrawerTrigger,
 } from "@/components/ui/drawer";
 import { UserRoundPlus } from "lucide-react";
@@ -36,7 +34,7 @@ export function DrawerDialogDemo() {
         </DialogTrigger>
         <DialogContent className="sm:max-w-[425px]">
           <DialogHeader>
-            <DialogTitle>Edit profile</DialogTitle>
+            <DialogTitle>Add profile</DialogTitle>
             <DialogDescription>
               Add user's data. Click save when you're done.
             </DialogDescription>
@@ -55,12 +53,6 @@ export function DrawerDialogDemo() {
         </Button>
       </DrawerTrigger>
       <DrawerContent>
-        <DrawerHeader className="text-left">
-          <DrawerTitle>Edit profile</DrawerTitle>
-          <DrawerDescription>
-            Make changes to your profile here. Click save when you're done.
-          </DrawerDescription>
-        </DrawerHeader>
         <ProfileForm />
         <DrawerFooter className="pt-2">
           <DrawerClose asChild>
