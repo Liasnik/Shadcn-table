@@ -6,7 +6,6 @@ import {
   DialogContent,
   DialogDescription,
   DialogHeader,
-  DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
 import {
@@ -22,7 +21,7 @@ import { ProfileForm } from "./ProfileForm";
 
 export function DrawerDialogDemo() {
   const [open, setOpen] = React.useState(false);
-  const isDesktop = useMediaQuery("(min-width: 768px)");
+  const isDesktop = useMediaQuery("(min-width: 0px)");
 
   if (isDesktop) {
     return (
@@ -34,10 +33,7 @@ export function DrawerDialogDemo() {
         </DialogTrigger>
         <DialogContent className="sm:max-w-[425px]">
           <DialogHeader>
-            <DialogTitle>Add profile</DialogTitle>
-            <DialogDescription>
-              Add user's data. Click save when you're done.
-            </DialogDescription>
+            <DialogDescription>Add user's data.</DialogDescription>
           </DialogHeader>
           <ProfileForm />
         </DialogContent>
