@@ -35,6 +35,7 @@ import { useEffect } from "react";
 import { fetchUsers, deleteUsersAsync } from "@/store/usersSlice";
 import { useAppDispatch, useAppSelector } from "@/hooks/typeshook";
 import { columns } from "@/components/columns";
+import { Toaster } from "./ui/toaster";
 
 export function DataTableDemo() {
   const [sorting, setSorting] = useState<SortingState>([]);
@@ -96,7 +97,7 @@ export function DataTableDemo() {
           onChange={(event) =>
             table.getColumn("username")?.setFilterValue(event.target.value)
           }
-          className="max-w-sm bg-transparent placeholder:text-black"
+          className="max-w-sm bg-transparent placeholder:text-accent-foreground"
         />
         <div className="flex justify-center  p-7 gap-6">
           <DrawerDialogDemo />
@@ -129,9 +130,9 @@ export function DataTableDemo() {
           </DropdownMenu>
         </div>
       </div>
-      <div className="rounded-md border">
+      <div>
         <Table>
-          <TableHeader>
+          <TableHeader className="border-b-4 border-b-[#5e5d5d]">
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow key={headerGroup.id}>
                 {headerGroup.headers.map((header) => {
@@ -180,7 +181,7 @@ export function DataTableDemo() {
         </Table>
       </div>
       <div className="sm:flex items-center justify-end space-x-2 py-4">
-        <div className="flex-1 text-sm text-white">
+        <div className="flex-1 text-sm text-secondary-foreground">
           {table.getFilteredSelectedRowModel().rows.length} of{" "}
           {table.getFilteredRowModel().rows.length} row(s) selected.
         </div>
@@ -213,6 +214,7 @@ export function DataTableDemo() {
           </Button>
         </div>
       </div>
+      <Toaster />
     </div>
   );
 }

@@ -102,7 +102,11 @@ export function ProfileForm() {
               <FormLabel>Username</FormLabel>
               <div className="flex items-center">
                 <FormControl>
-                  <Input placeholder="Enter username" {...field} />
+                  <Input
+                    placeholder="Enter username"
+                    {...field}
+                    className="bg-[#535353]"
+                  />
                 </FormControl>
               </div>
               <FormDescription>
@@ -120,7 +124,11 @@ export function ProfileForm() {
               <FormLabel>Full name</FormLabel>
               <div className="flex items-center">
                 <FormControl>
-                  <Input placeholder="Enter your full name" {...field} />
+                  <Input
+                    placeholder="Enter your full name"
+                    {...field}
+                    className="bg-[#535353]"
+                  />
                 </FormControl>
               </div>
               <FormMessage />
@@ -134,7 +142,11 @@ export function ProfileForm() {
             <FormItem>
               <FormLabel>Email</FormLabel>
               <FormControl>
-                <Input placeholder="Enter email" {...field} />
+                <Input
+                  placeholder="Enter email"
+                  {...field}
+                  className="bg-[#535353]"
+                />
               </FormControl>
 
               <FormMessage />
@@ -152,6 +164,7 @@ export function ProfileForm() {
                   placeholder="Enter amount"
                   {...field}
                   value={field.value?.toString()}
+                  className="bg-[#535353]"
                 />
               </FormControl>
               <FormMessage />

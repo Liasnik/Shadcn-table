@@ -21,7 +21,7 @@ import { ProfileForm } from "./ProfileForm";
 
 export function DrawerDialogDemo() {
   const [open, setOpen] = React.useState(false);
-  const isDesktop = useMediaQuery("(min-width: 0px)");
+  const isDesktop = useMediaQuery("(min-width: 0)");
 
   if (isDesktop) {
     return (
@@ -31,7 +31,7 @@ export function DrawerDialogDemo() {
             <UserRoundPlus className="mr-3 h-4 w-4" /> Add user
           </Button>
         </DialogTrigger>
-        <DialogContent className="sm:max-w-[425px]">
+        <DialogContent className="sm:max-w-[425px] bg-[#535353]">
           <DialogHeader>
             <DialogDescription>Add user's data.</DialogDescription>
           </DialogHeader>
